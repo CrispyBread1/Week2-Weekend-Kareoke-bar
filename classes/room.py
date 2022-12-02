@@ -32,6 +32,7 @@ class Room:
     
     def sees_fav_song(self):
         for guest in self.guests_in_room:
-            if guest.fav_song == self.list_of_songs["name"]:
-                return "Whoo!"
-            else: break
+            for song_name in self.list_of_songs["name"]:
+                if guest.fav_song == song_name:
+                    return "Whoo!"
+                else: break
